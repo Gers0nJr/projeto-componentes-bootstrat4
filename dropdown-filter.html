@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>dropdown-filter</title>
+	</head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+	<script>
+		function filter() {
+			var keyword = document.getElementById("search").value;
+			var select = document.getElementById("select");
+			for (var i = 0; i < select.length; i++) {
+				var txt = select.options[i].text;
+				if (txt.substring(0, keyword.length).toLowerCase() !== keyword.toLowerCase() && keyword.trim() !== "") {
+					select.options[i].style.display = 'none';
+				} else {
+					select.options[i].style.display = 'list-item';
+				}
+			}
+		}
+	</script>
+	<body>
+		<div class="container"> 
+			<div id="container-dropdown">
+			  <input id="show" type=checkbox>
+			  <input type="text" class="form-control" placeholder="Selecione" style="margin-top: 10px;" id="input-select">
+			  <ul class="list-group" style="margin-top: 10px;" id="content">
+				<li class="list-group-item">
+				  <input type="text" class="form-control" placeholder="Busca">
+				</li>
+				<li class="list-group-item">Maça</li>
+				<li class="list-group-item">Pera</li>
+				<li class="list-group-item">Laranja</li>
+				<li class="list-group-item">Banana</li>
+			  </ul>
+			</div> 
+		  </div>  
+		  
+		  <div class="container"> 
+		  
+			<div>
+				<input type="text" id="search" name="search" style="margin: 10px;width: 165px;" onkeyup="filter()">
+			</div>
+			<div>
+				<select id="select" size="10" style="margin: 10px; width: 165px;height: 170px;">
+					<option>Cupcake</option>
+					<option>Cunut</option>
+					<option>Eclair</option>
+					<option>Froyo</option>
+					<option>Gingerbread</option>
+					<option>Honeycomb</option>
+					<option>Ice Cream Sandwich</option>
+					<option>Jelly Bean</option>
+					<option>KitKat</option>
+					<option>Lollipop</option>
+					<option>Marshmallow</option>
+					<option>Nougat</option>
+				</select>
+			</div>
+		</div>
+	</body>
+</html>

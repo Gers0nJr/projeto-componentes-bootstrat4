@@ -1,0 +1,16 @@
+#show,#content{display:none;}
+#show:checked~#content{display:block;}
+
+#input-select:focus~#content{
+  display:block;
+}
+
+#content:hover{
+  display:block;
+}
+
+#container-dropdown  {  	
+	margin: 1em auto;  	
+	width: 100%;  	
+	background: #fff;  
+}  
